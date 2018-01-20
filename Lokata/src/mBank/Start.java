@@ -1,12 +1,14 @@
 package mBank;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
-import GUI.*;
+
+import pages.*;
 
 public class Start {
 	
@@ -34,6 +36,7 @@ public class Start {
         loginPage.logIn(login, password);
         
         DesktopPage desktopPage = new DesktopPage(driver);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         desktopPage.clickShoppingButton();
         
         

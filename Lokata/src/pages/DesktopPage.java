@@ -1,4 +1,4 @@
-package GUI;
+package pages;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -10,10 +10,10 @@ public class DesktopPage {
 	WebDriver driver;
 	
 	@FindBy(how=How.XPATH, xpath ="//*[@id='main-nav']/ul/li[3]/a")
-	WebElement shoppingButton;
+	WebElement marketButton;
 	
 	public void clickShoppingButton(){
-		shoppingButton.click();
+		marketButton.click();
 	}
 	
 	public DesktopPage(WebDriver driver) {
