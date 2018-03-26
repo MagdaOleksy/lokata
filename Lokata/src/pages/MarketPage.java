@@ -10,6 +10,10 @@ public class MarketPage {
 		this.driver = driver;
 	}
 	
+	public void clickSavingsButton(){
+		savingsButton.click();
+	}
+	
 	WebDriver driver;
 	
 	@FindBy(id = "shop-menu-SV")
