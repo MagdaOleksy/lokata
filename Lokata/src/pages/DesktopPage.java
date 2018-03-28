@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class DesktopPage {
+public class DesktopPage extends Page{
 
 	WebDriver driver;
 	
@@ -17,7 +17,7 @@ public class DesktopPage {
 	}
 	
 	public DesktopPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 

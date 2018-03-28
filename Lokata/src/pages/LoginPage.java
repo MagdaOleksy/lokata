@@ -3,7 +3,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class LoginPage extends Page{
 	
 	WebDriver driver;
 	@FindBy(id="userID")
@@ -14,7 +14,8 @@ public class LoginPage {
 	WebElement submitButton;
 	
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
+		
 	}
 	
 	public void logIn(String log, String pass){

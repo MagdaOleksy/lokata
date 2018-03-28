@@ -3,11 +3,11 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-public class MarketPage {
+//Klasa strony 
+public class MarketPage extends Page{
 
 	public MarketPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	public void clickSavingsButton(){
@@ -15,7 +15,7 @@ public class MarketPage {
 	}
 	
 	WebDriver driver;
-	
-	@FindBy(id = "shop-menu-SV")
+	@FindBy(linkText = "Pasa¿")
+	//@FindBy(id = "shop-menu-SV")
 	WebElement savingsButton;
 }

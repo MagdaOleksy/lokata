@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
@@ -34,6 +35,14 @@ public class Start {
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 	  loginPage.logIn(login, password);
+	  Assert.assertEquals(driver.getTitle(), "mBank serwis transakcyjny");
+  }
+  
+  @Test(priority = 2)
+  public void goToMarketPage(){
+	
+	 MarketPage marketPage =PageFactory.initElements(driver, MarketPage.class); 
+	 marketPage.clickSavingsButton();
   }
   
   @BeforeTest
@@ -52,10 +61,10 @@ public class Start {
   
   @BeforeSuite
   public void getLoginAndPassword(){
-	  System.out.println("Podaj login");
+	  System.out.println("Podaj login\n");
 	  Scanner in = new Scanner(System.in);
 	  login = in.nextLine();
-	  System.out.println("Podaj has³o");
+	  System.out.println("Podaj has³o\n");
 	 
 	  password = in.nextLine();
   }
